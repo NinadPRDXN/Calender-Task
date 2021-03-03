@@ -28,7 +28,6 @@ function Form({navigation}) {
     setHour('');
     setMinutes('');
     setTask('');
-    setFormDisplay(false)
   }
 
   const changeUserData = () => {
@@ -99,6 +98,12 @@ function Form({navigation}) {
           <DateTime onPress={ () => setVisibility(true) }>
             <DateTimeText>Select Date & Time</DateTimeText>
           </DateTime>
+          {
+            (selectedDate != '') && 
+            (hour != '') && 
+            (minutes != '') && 
+            <Text>{selectedDate} {hour}:{minutes}</Text>
+          }
           <TextArea value={task} onChangeText={(text) => setTask(text)} />
           <ButtonContainer>
             <FormButtons onPress={ () => changeUserData() }>
