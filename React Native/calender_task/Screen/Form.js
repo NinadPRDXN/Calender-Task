@@ -102,7 +102,7 @@ function Form({navigation}) {
             (selectedDate != '') && 
             (hour != '') && 
             (minutes != '') && 
-            <Text>{selectedDate} {hour}:{minutes}</Text>
+            <SelectedDate>{selectedDate} {hour}:{minutes}</SelectedDate>
           }
           <TextArea value={task} onChangeText={(text) => setTask(text)} />
           <ButtonContainer>
@@ -130,7 +130,7 @@ const Overlay = styled.View`
 
 const FormContainer = styled.View`
   width: 80%;
-  height: 200px;
+  height: 250px;
   padding: 20px;
   position: absolute;
   z-index: 1;
@@ -175,6 +175,11 @@ const FormButtonText = styled.Text`
 const ErrorMsg = styled.Text`
   color: #ff6347;
   text-align: center;
+`;
+
+const SelectedDate = styled.Text`
+  text-align: center;
+  color: #00bbf2;
 `;
 
 export default Form;
